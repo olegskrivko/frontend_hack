@@ -5,7 +5,7 @@ import PortfolioDashboard from './pages/PortfolioDashboard'
 import AllocationDashboard from './pages/AllocationDashboard'
 import InvestmentsDashboard from './pages/InvestmentsDashboard'
 import Testapp from './pages/testapp'
-
+import { BrowserRouter, Routes, Route } from "react-router-dom"; // BrowserRouter, Routes, and Route
 function App() {
   // const [count, setCount] = useState(0)
 
@@ -16,7 +16,12 @@ function App() {
      {/* <Testapp /> */}
      <PortfolioDashboard />
      <AllocationDashboard />
-     <InvestmentsDashboard />
+     {/* <InvestmentsDashboard /> */}
+     <BrowserRouter>  {/* Wrap the entire app in BrowserRouter */}
+      <Routes>
+     <Route path="/" element={<InvestmentsDashboard />} /> {/* Route for InvestmentsDashboard */}
+     </Routes>
+     </BrowserRouter>
     </>
   )
 }
